@@ -1,20 +1,25 @@
-/* Target the crouch button's active state and recolor the red filter to bright pink/purple */
-.mobile-fullscreen [class*="crouch"]:active,
-.mobile-fullscreen [class*="crouch"].active,
-.mobile-fullscreen [class*="crouch"][class*="active"],
-.mobile-fullscreen .btn-cont.crouch[class*="active"] {
-    background-color: #f0abfc !important;
-    filter: hue-rotate(130deg) saturate(300%) brightness(1.2) !important;
-    box-shadow: 0 0 20px #f0abfc, inset 0 0 10px #c084fc !important;
+/* Isolated Kaoruko Waguri snippet — Crouch button active recolor */
+.mobile-fullscreen .btn-cont.crouch {
+    --main-color: #f0abfc !important;
+    --active-color: #9333ea !important;
 }
 
-/* Recolor inner SVG/image icons inside the crouch button when pressed */
-.mobile-fullscreen [class*="crouch"]:active img,
-.mobile-fullscreen [class*="crouch"].active img,
-.mobile-fullscreen [class*="crouch"]:active svg,
-.mobile-fullscreen [class*="crouch"].active svg {
-    filter: hue-rotate(130deg) saturate(300%) brightness(1.2) !important;
-}    opacity: 1 !important;
+.mobile-fullscreen .btn-cont.crouch:active,
+.mobile-fullscreen .btn-cont.crouch.active,
+.mobile-fullscreen .btn-cont.crouch[data-v-active="true"] {
+    background-color: #9333ea !important;
+    border-color: #f0abfc !important;
+    box-shadow: 0 0 20px #f0abfc !important;
+}
+
+/* Recolor the red SVG/X overlay inside the crouch container */
+.mobile-fullscreen .btn-cont.crouch:active *,
+.mobile-fullscreen .btn-cont.crouch.active *,
+.mobile-fullscreen .btn-cont.crouch[data-v-active="true"] * {
+    fill: #f0abfc !important;
+    color: #f0abfc !important;
+    filter: hue-rotate(135deg) saturate(300%) !important;
+}}    opacity: 1 !important;
 }    border: 2px solid #c084fc !important;
     box-shadow: 0 0 18px #9333ea !important;
 }
