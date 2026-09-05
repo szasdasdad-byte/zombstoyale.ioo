@@ -1,25 +1,51 @@
-/* Isolated Kaoruko Waguri snippet — Crouch button active recolor */
+/* =========================================================
+   KAORUKO WAGURI - CROUCH RECOLOR (PINK/PURPLE)
+   ========================================================= */
+
+/* 1. Override the root color variables specifically on the crouch button */
 .mobile-fullscreen .btn-cont.crouch {
-    --main-color: #f0abfc !important;
-    --active-color: #9333ea !important;
+    --main: #f0abfc !important;
+    --main-dark: #c084fc !important;
+    --primary: #9333ea !important;
+    --active: #f0abfc !important;
+    --border: #e879f9 !important;
 }
 
+/* 2. Hide Kirka's default red image/SVG overlays */
+.mobile-fullscreen .btn-cont.crouch img,
+.mobile-fullscreen .btn-cont.crouch .btn-overlay,
+.mobile-fullscreen .btn-cont.crouch::before {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+/* 3. Base untoggled state (Keep normal/transparent) */
+.mobile-fullscreen .btn-cont.crouch {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+}
+
+/* 4. Active/Toggled State (Forces Bright Pink/Purple) */
 .mobile-fullscreen .btn-cont.crouch:active,
 .mobile-fullscreen .btn-cont.crouch.active,
-.mobile-fullscreen .btn-cont.crouch[data-v-active="true"] {
+.mobile-fullscreen .btn-cont.crouch[data-v-active="true"],
+.mobile-fullscreen .btn-cont.crouch[class*="active"] {
     background-color: #9333ea !important;
-    border-color: #f0abfc !important;
-    box-shadow: 0 0 20px #f0abfc !important;
+    background-image: none !important;
+    border: 2px solid #f0abfc !important;
+    box-shadow: 0 0 20px #f0abfc, inset 0 0 10px #c084fc !important;
+    opacity: 1 !important;
 }
 
-/* Recolor the red SVG/X overlay inside the crouch container */
+/* 5. Force any remaining active icons or child states to match the pink hue */
 .mobile-fullscreen .btn-cont.crouch:active *,
 .mobile-fullscreen .btn-cont.crouch.active *,
 .mobile-fullscreen .btn-cont.crouch[data-v-active="true"] * {
     fill: #f0abfc !important;
     color: #f0abfc !important;
-    filter: hue-rotate(135deg) saturate(300%) !important;
-}}    opacity: 1 !important;
+    filter: drop-shadow(0 0 5px #f0abfc) !important;
+}}}    opacity: 1 !important;
 }    border: 2px solid #c084fc !important;
     box-shadow: 0 0 18px #9333ea !important;
 }
