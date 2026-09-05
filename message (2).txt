@@ -1,22 +1,20 @@
-/* Rebind the internal active/selected button variables strictly for crouch */
-.mobile-fullscreen .btn-cont.crouch {
-    --main: #d8b4fe !important;
-    --main-dark: #9333ea !important;
-    --primary: #c084fc !important;
-    --active: #9333ea !important;
+/* Target the crouch button's active state and recolor the red filter to bright pink/purple */
+.mobile-fullscreen [class*="crouch"]:active,
+.mobile-fullscreen [class*="crouch"].active,
+.mobile-fullscreen [class*="crouch"][class*="active"],
+.mobile-fullscreen .btn-cont.crouch[class*="active"] {
+    background-color: #f0abfc !important;
+    filter: hue-rotate(130deg) saturate(300%) brightness(1.2) !important;
+    box-shadow: 0 0 20px #f0abfc, inset 0 0 10px #c084fc !important;
 }
 
-/* Force the toggled active state on the crouch button to bright pink/purple */
-.mobile-fullscreen .btn-cont.crouch.active,
-.mobile-fullscreen .btn-cont.crouch[class*="active"],
-.mobile-fullscreen .btn-cont.crouch[class*="selected"],
-.mobile-fullscreen .btn-cont.crouch .btn.active,
-.mobile-fullscreen .btn-cont.crouch .btn[class*="active"] {
-    background-color: #f0abfc !important;
-    background-image: none !important;
-    border: 2px solid #e879f9 !important;
-    box-shadow: 0 0 20px #f0abfc, inset 0 0 10px #c084fc !important;
-    opacity: 1 !important;
+/* Recolor inner SVG/image icons inside the crouch button when pressed */
+.mobile-fullscreen [class*="crouch"]:active img,
+.mobile-fullscreen [class*="crouch"].active img,
+.mobile-fullscreen [class*="crouch"]:active svg,
+.mobile-fullscreen [class*="crouch"].active svg {
+    filter: hue-rotate(130deg) saturate(300%) brightness(1.2) !important;
+}    opacity: 1 !important;
 }    border: 2px solid #c084fc !important;
     box-shadow: 0 0 18px #9333ea !important;
 }
