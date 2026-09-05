@@ -1,31 +1,28 @@
-.desktop-game-interface > div {
-    transform: scale(1, 0.8) !important;
-}
+/* =========================================================
+   STRICT CROUCH TOGGLE HIGHLIGHT (PERMANENT UNTIL UNTOGGLED)
+   ========================================================= */
 
-.desktop-game-interface > .chat-position {
-    margin-bottom: -5.5rem !important;
-} 
-
-#app > div.game-interface > div.desktop-game-interface div.infos {
-    display: none;
-}
-
-#app > div.game-interface > div.desktop-game-interface div.list-controls {
-    display: none;
-}
-
-div.interface.text-2>img#logo.logo {
-    display: none !important;
-}
-
-div#left-interface.left-interface>div#lobby-news.lobby-news>div.news-card {
+/* 1. Prevent touch/hold active styles on all touch controls */
+.mobile-fullscreen .btn-cont:active,
+.mobile-fullscreen div[class*="-btn"]:active,
+.mobile-fullscreen [class*="crouch"]:active,
+.mobile-fullscreen [class*="crouch"]:focus {
     background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-/* SEARCHING GAME */
-.searching-game>* {
-    background: linear-gradient(90.02deg, transparent .02%, #000000b9 25.53%, #0000005d 71.86%, transparent 99.98%) !important;
-}
+/* 2. Target Kirka's internal Vue toggle state attribute strictly for crouch */
+.mobile-fullscreen div[class*="crouch"][data-v-active="true"],
+.mobile-fullscreen div[class*="crouch"].is-active,
+.mobile-fullscreen div[class*="crouch"].active,
+.mobile-fullscreen div[class*="crouch"][data-active="true"] {
+    background: #9333ea !important;
+    background-color: #9333ea !important;
+    opacity: 1 !important;
+    border: 2px solid #c084fc !important;
+    box-shadow: 0 0 18px #9333ea, inset 0 0 12px #7e22ce !important;
+}}
 
 /* Ad Removal */
 .ad-bottom,
