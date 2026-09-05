@@ -1,23 +1,22 @@
-/* Disable active/touch overlay effects on crouch */
-.mobile-fullscreen .btn-cont.crouch:active,
-.mobile-fullscreen .btn-cont.crouch:focus,
-.mobile-fullscreen .btn-cont.crouch .btn:active {
-    background: transparent !important;
-    border: none !important;
-}
-
-/* Default Untoggled State (Reverted to Kirka Default Red) */
+/* Rebind the internal active/selected button variables strictly for crouch */
 .mobile-fullscreen .btn-cont.crouch {
-    background-color: rgba(255, 0, 0, 0.4) !important;
-    border: 2px solid #ff0000 !important;
+    --main: #d8b4fe !important;
+    --main-dark: #9333ea !important;
+    --primary: #c084fc !important;
+    --active: #9333ea !important;
 }
 
-/* Toggled State ONLY (Highlights Purple when crouch toggle is active) */
-.mobile-fullscreen .btn-cont.crouch[data-v-active="true"],
+/* Force the toggled active state on the crouch button to bright pink/purple */
 .mobile-fullscreen .btn-cont.crouch.active,
-.mobile-fullscreen .btn-cont.crouch.is-active,
-.mobile-fullscreen .btn-cont.crouch[data-active="true"] {
-    background-color: #9333ea !important;
-    border: 2px solid #c084fc !important;
+.mobile-fullscreen .btn-cont.crouch[class*="active"],
+.mobile-fullscreen .btn-cont.crouch[class*="selected"],
+.mobile-fullscreen .btn-cont.crouch .btn.active,
+.mobile-fullscreen .btn-cont.crouch .btn[class*="active"] {
+    background-color: #f0abfc !important;
+    background-image: none !important;
+    border: 2px solid #e879f9 !important;
+    box-shadow: 0 0 20px #f0abfc, inset 0 0 10px #c084fc !important;
+    opacity: 1 !important;
+}    border: 2px solid #c084fc !important;
     box-shadow: 0 0 18px #9333ea !important;
 }
