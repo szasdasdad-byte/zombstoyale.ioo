@@ -1,17 +1,23 @@
-.mobile-fullscreen .crouch-btn[data-v-active="true"],
-.mobile-fullscreen .crouch-btn.is-active,
-.mobile-fullscreen .crouch-btn.active,
-.mobile-fullscreen div[class*="crouch-btn"].active,
-.mobile-fullscreen div[class*="crouch-btn"][data-v-active="true"] {
-    background: #9333ea !important;
+/* Disable active/touch overlay effects on crouch */
+.mobile-fullscreen .btn-cont.crouch:active,
+.mobile-fullscreen .btn-cont.crouch:focus,
+.mobile-fullscreen .btn-cont.crouch .btn:active {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Default Untoggled State (Reverted to Kirka Default Red) */
+.mobile-fullscreen .btn-cont.crouch {
+    background-color: rgba(255, 0, 0, 0.4) !important;
+    border: 2px solid #ff0000 !important;
+}
+
+/* Toggled State ONLY (Highlights Purple when crouch toggle is active) */
+.mobile-fullscreen .btn-cont.crouch[data-v-active="true"],
+.mobile-fullscreen .btn-cont.crouch.active,
+.mobile-fullscreen .btn-cont.crouch.is-active,
+.mobile-fullscreen .btn-cont.crouch[data-active="true"] {
     background-color: #9333ea !important;
-    opacity: 1 !important;
     border: 2px solid #c084fc !important;
-    box-shadow: 0 0 18px #9333ea, inset 0 0 12px #7e22ce !important;
-}.mobile-fullscreen div[class*="crouch"][data-active="true"] {
-    background: #9333ea !important;
-    background-color: #9333ea !important;
-    opacity: 1 !important;
-    border: 2px solid #c084fc !important;
-    box-shadow: 0 0 18px #9333ea, inset 0 0 12px #7e22ce !important;
+    box-shadow: 0 0 18px #9333ea !important;
 }
