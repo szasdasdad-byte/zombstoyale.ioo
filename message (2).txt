@@ -864,7 +864,7 @@ margin-bottom: -5.5rem !important;
   display: none
 }
 #app > div.game-interface > div.desktop-game-interface div.list-controls {
-  display: True color:linear-gradient(#000000, #000000)
+  display: True color:linear-gradient(#800080, #800080)
 }
  /*Yslcss made by Summer.#JAUF8R,took me awhile to make this,somethings are buggy and just a heads up
  if you want to use this for your own personal use feel free to do so but please give credit to me
