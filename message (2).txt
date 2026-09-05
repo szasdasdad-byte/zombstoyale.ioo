@@ -147,7 +147,6 @@ display: none !important;
 /* dark text */
 /* lightdark bg */
 #gui .footer,
-.christmas .box.active,
 .button:hover,
 .bg-progress,
 .bg-level,
@@ -161,6 +160,21 @@ display: none !important;
 .button {
     background: transparent !important;
     --hover-color: rgba(0, 0, 0, 0.514) !important;
+}
+
+/* UPDATED: Active / Toggled buttons (like crouch toggle) now shine bright purple */
+.christmas .box.active,
+.map-button.active,
+.mod-button.active,
+.button.active,
+.control-btn.active,
+.mobile-btn.active,
+.crouch-btn.active {
+    background: #a855f7 !important;
+    background-color: #a855f7 !important;
+    border: .25rem solid #c084fc !important;
+    box-shadow: 0 0 15px #a855f7, inset 0 0 10px #8b5cf6 !important;
+    opacity: 1 !important;
 }
 
 /* dark bg */
@@ -403,10 +417,6 @@ button {
     background: var(--secondary-2) !important;
 }
 
-.christmas .box.active {
-    outline: 0.2rem solid var(--main) !important;
-}
-
 .christmas .box:hover {
     outline: 0.2rem solid white !important;
 }
@@ -421,9 +431,13 @@ button {
     border: none;
 }
 
-.custom-checkbox>input:checked+span[data-v-730c0c40]:before {
-    background-color: var(--main) !important;
-    border: none;
+/* UPDATED: Checked inputs & checkboxes now turn bright purple */
+.custom-checkbox>input:checked+span[data-v-730c0c40]:before,
+.custom-checkbox > input:checked + span:before {
+    background-color: #a855f7 !important;
+    background: #a855f7 !important;
+    border: 1px solid #c084fc !important;
+    box-shadow: 0 0 8px #a855f7 !important;
 }
 
 .spectator .infos {
@@ -525,11 +539,6 @@ body {
     background: #0000003d !important;
 }
 
-.map-button.active,
-.mod-button.active {
-    border: .25rem solid var(--main) !important;
-}
-
 .mini-map-cont {
     top: 0.5rem !important;
     left: unset !important;
@@ -583,11 +592,7 @@ body {
 .instruction {
     display: none !important;
 }
-/* checkbox */
-.custom-checkbox > input:checked + span:before {
-    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='hsl(42, 85%, 100%)' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e") !important;
-    border-color: white !important;
-}
+
 .selected[data-v-02a6df71] {
     content: url(https://i.imgur.com/FHabz3Q.png) !important;
     transform:scale(1.9) !important
@@ -823,8 +828,6 @@ body {
 .right-interface {
     opacity: 0 !important;
     transition: all 0.5s ease-in-out;
-    
-    
 }
 
 
@@ -841,7 +844,6 @@ body {
 .play-content {
     opacity: 0 !important;
     transition: all 0.5s ease-in-out;
-    
 }
 
 
@@ -853,20 +855,18 @@ body {
 .play-content:hover {
     opacity: 1 !important;
     transition: all 0.5s ease-in-out;
+}
+
 .desktop-game-interface > div {
     transform: scale(1, 0.7) !important;
 }
 
 .desktop-game-interface > .chat-position {
-margin-bottom: -5.5rem !important;
+    margin-bottom: -5.5rem !important;
 } 
 #app > div.game-interface > div.desktop-game-interface div.infos {
   display: none
 }
 #app > div.game-interface > div.desktop-game-interface div.list-controls {
-  display: True color:linear-gradient(#800080, #800080)
+  display: none
 }
- /*Yslcss made by Summer.#JAUF8R,took me awhile to make this,somethings are buggy and just a heads up
- if you want to use this for your own personal use feel free to do so but please give credit to me
- And also to Paladin and Sonar./Sovax for approving this
- Thank you for using my css and have a good day!*/
