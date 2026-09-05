@@ -1,29 +1,48 @@
-.desktop-game-interface > div {
-    transform: scale(1, 0.8) !important;
+/* =========================================================
+   FIX: PURPLE TOGGLE / CROUCH BUTTON (MOBILE & INTERFACE)
+   ========================================================= */
+
+/* Mobile Control Buttons & Crouch Active States */
+.crouch.active,
+.crouch-btn.active,
+.mobile-controls .crouch.active,
+.mobile-btn.active,
+.control-btn.active,
+.map-button.active,
+.mod-button.active,
+.christmas .box.active,
+.button.active,
+[data-v-crouch].active,
+div[class*="crouch"].active,
+button[class*="crouch"].active,
+.crouch:active,
+.mobile-controls div:active {
+    background: #a855f7 !important;
+    background-color: #a855f7 !important;
+    border: 2px solid #c084fc !important;
+    box-shadow: 0 0 15px #a855f7, inset 0 0 8px #8b5cf6 !important;
+    opacity: 1 !important;
 }
 
-.desktop-game-interface > .chat-position {
-margin-bottom: -5.5rem !important;
-} 
-#app > div.game-interface > div.desktop-game-interface div.infos {
-  display: none
-}
-#app > div.game-interface > div.desktop-game-interface div.list-controls {
-  display: none
-}
-
-div.interface.text-2>img#logo.logo {
-    display: none !important;
+/* Force SVGs & inner icons inside the crouch toggle to take purple fill/glow */
+.crouch.active svg,
+.crouch-btn.active svg,
+.mobile-btn.active svg,
+div[class*="crouch"].active svg,
+div[class*="crouch"].active img {
+    fill: #ffffff !important;
+    filter: drop-shadow(0 0 5px #a855f7) !important;
+    opacity: 1 !important;
 }
 
-div#left-interface.left-interface>div#lobby-news.lobby-news>div.news-card {
-    background: transparent !important;
-}
-
-/* SEARCHING GAME */
-.searching-game>* {
-    /* background: linear-gradient(90.02deg,transparent .02%,rgba(34,33,69,.85) 25.53%,#1f1d58 71.86%,transparent 99.98%) !important; */
-    background: linear-gradient(90.02deg, transparent .02%, #000000b9 25.53%, #0000005d 71.86%, transparent 99.98%) !important;
+/* Checkboxes / Radio Toggles */
+.custom-checkbox > input:checked + span:before,
+.custom-checkbox.checkbox-size > input:checked + span:before {
+    background: #a855f7 !important;
+    background-color: #a855f7 !important;
+    border: 1px solid #c084fc !important;
+    box-shadow: 0 0 10px #a855f7 !important;
+}    background: linear-gradient(90.02deg, transparent .02%, #000000b9 25.53%, #0000005d 71.86%, transparent 99.98%) !important;
 }
 
 
